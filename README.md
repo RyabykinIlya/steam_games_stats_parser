@@ -48,20 +48,12 @@ For better results (especially with age-restricted games), set up Steam authenti
    ```
    STEAM_SESSIONID=your_actual_session_id_here
    STEAM_LOGIN_SECURE=your_actual_steam_login_secure_here
+   STEAM_PARENTAL=your_actual_steam_parental_cookie (if set)
    ```
 
-### Manual Cookie Setup (alternative)
-
-You can also set cookies manually in the code:
-
-```python
-parser = SteamParser()
-cookies = {
-    'sessionid': 'your_session_id',
-    'steamLoginSecure': 'your_login_secure'
-}
-parser.set_steam_cookies_manual(cookies)
-parser.run()
+## Build for your friends
+```
+python3 -m PyInstaller --onefile steam_parser.py
 ```
 
 ## Input File Format
@@ -82,6 +74,7 @@ The script creates/updates `steam_games.xlsx` with columns:
 - `price`: Game price
 - `release_date`: Release date (formatted as dd.mm.yyyy)
 - `status`: Processing status
+etc.
 
 ## Error Handling
 

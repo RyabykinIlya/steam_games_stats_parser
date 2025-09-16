@@ -767,3 +767,6 @@ class SteamParser:
 if __name__ == "__main__":
     parser = SteamParser()
     parser.run()
+    
+    input("Нажмите Enter чтобы выйти")
+
